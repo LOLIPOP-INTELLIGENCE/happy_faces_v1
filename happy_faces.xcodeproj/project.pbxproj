@@ -14,6 +14,7 @@
 		493AF8F5223819AC00C43E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493AF8F3223819AC00C43E5F /* LaunchScreen.storyboard */; };
 		493AF900223819AC00C43E5F /* happy_facesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AF8FF223819AC00C43E5F /* happy_facesTests.swift */; };
 		493AF90B223819AC00C43E5F /* happy_facesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AF90A223819AC00C43E5F /* happy_facesUITests.swift */; };
+		493AF919223CE95300C43E5F /* happy_faces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 493AF918223CE95200C43E5F /* happy_faces.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		493AF906223819AC00C43E5F /* happy_facesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = happy_facesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		493AF90A223819AC00C43E5F /* happy_facesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = happy_facesUITests.swift; sourceTree = "<group>"; };
 		493AF90C223819AC00C43E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493AF918223CE95200C43E5F /* happy_faces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = happy_faces.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		493AF8DE223819A900C43E5F = {
 			isa = PBXGroup;
 			children = (
+				493AF918223CE95200C43E5F /* happy_faces.mlmodel */,
 				493AF8E9223819A900C43E5F /* happy_faces */,
 				493AF8FE223819AC00C43E5F /* happy_facesTests */,
 				493AF909223819AC00C43E5F /* happy_facesUITests */,
@@ -258,6 +261,7 @@
 			files = (
 				493AF8ED223819A900C43E5F /* ViewController.swift in Sources */,
 				493AF8EB223819A900C43E5F /* AppDelegate.swift in Sources */,
+				493AF919223CE95300C43E5F /* happy_faces.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
