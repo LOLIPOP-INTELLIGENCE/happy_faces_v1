@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+   
     let model=happy_faces()
     @IBOutlet weak var myImage: UIImageView!
     override func viewDidLoad() {
@@ -33,8 +34,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         if let pickedImage=info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             myImage.contentMode = .scaleToFill
             myImage.image=pickedImage
-            let final_image=image(with: myImage.image!, scaledTo: CGSize(width: 48.0, height: 48.0))
-            let output = try? model.prediction(image:final_image as! CVPixelBuffer)
+            myImage.image=image(with: myImage.image!, scaledTo: CGSize(width: 48.0, height: 48.0))
+            let k=convertImageToBW(image: myImage.image!)
+            let output = try? model.prediction(image:k as! CVPixelBuffer)
             print(output!)
             
         }
@@ -49,7 +51,30 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         return newImage ?? UIImage()
     }
     
+    func convertImageToBW(image:UIImage) -> UIImage {
+        
+        let filter = CIFilter(name: "CIPhotoEffectMono")
+        
+        // convert UIImage to CIImage and set as input
+        
+        let ciInput = CIImage(image: image)
+        filter?.setValue(ciInput, forKey: "inputImage")
+        
+        // get output CIImage, render as CGImage first to retain proper UIImage scale
+        
+        let ciOutput = filter?.outputImage
+        let ciContext = CIContext()
+        let cgImage = ciContext.createCGImage(ciOutput!, from: (ciOutput?.extent)!)
+        
+        return UIImage(cgImage: cgImage!)
+    }
+    
+    
+    
+    
     
 }
+
+
 
 
